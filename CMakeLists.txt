@@ -5,13 +5,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(learnOpenGL VERSION 1.0)
 
-find_package(glfw3 3.3 REQUIRED)
 find_package(OpenGL REQUIRED)
 
 file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS src/*.c src/*.h src/*.cpp src/*.hpp)
 add_executable(learnOpenGL src/main.cpp)
 
 add_subdirectory(lib/glad/)
+add_subdirectory(lib/glfw/)
 
 target_link_libraries(learnOpenGL glad)
 target_link_libraries(learnOpenGL glfw)
